@@ -1,0 +1,131 @@
+{
+  "_comment": "Your real profile — used for auto-filling job applications. Update the blanks!",
+
+  "personal": {
+    "firstName": "Islahuddin",
+    "lastName": "",
+    "email": "YOUR_EMAIL@gmail.com",
+    "phone": "+923036039298",
+    "location": {
+      "city": "Lahore",
+      "country": "Pakistan",
+      "timezone": "Asia/Karachi"
+    },
+    "linkedin": "https://www.linkedin.com/in/islahuddinn",
+    "github": "https://github.com/islahuddinn",
+    "portfolio": "https://islahuddin-3d-portfolio.netlify.app/",
+    "twitter": "https://twitter.com/Slahuddinoffic1",
+    "website": "https://islahuddin-3d-portfolio.netlify.app/"
+  },
+
+  "professional": {
+    "title": "Full Stack Developer",
+    "yearsExperience": 4,
+    "summary": "Enthusiastic and motivated Full Stack Developer with nearly 4 years of experience building scalable web applications. Proficient in the MERN stack (MongoDB, Express.js, React, Node.js), Django, Docker, and modern JavaScript. Passionate about clean code, automation, and delivering impactful digital solutions. Eager to contribute to team success through hard work and attention to detail.",
+    "availability": "Immediate",
+    "workType": ["Remote", "Contract", "Full-time"],
+    "salaryExpectation": {
+      "min": 2500,
+      "max": 5000,
+      "currency": "USD",
+      "period": "monthly"
+    }
+  },
+
+  "skills": {
+    "languages": ["JavaScript", "TypeScript", "Python", "SQL"],
+    "frontend": ["React.js", "Next.js", "Three.js", "HTML5", "CSS3", "TailwindCSS"],
+    "backend": ["Node.js", "Express.js", "Django", "REST APIs"],
+    "databases": ["MongoDB", "PostgreSQL", "MySQL"],
+    "devops": ["Docker", "Git", "GitHub", "Netlify", "Linux"],
+    "other": ["MERN Stack", "3D Web Development", "Agile/Scrum"]
+  },
+
+  "experience": [
+    {
+      "company": "YOUR_CURRENT_COMPANY",
+      "title": "Full Stack Developer",
+      "startDate": "2022-01",
+      "endDate": "Present",
+      "description": "Building and maintaining full-stack web applications using React, Node.js, Express, and MongoDB. Developing REST APIs and delivering client-facing digital products."
+    },
+    {
+      "company": "YOUR_PREVIOUS_COMPANY",
+      "title": "Junior Developer",
+      "startDate": "2020-06",
+      "endDate": "2021-12",
+      "description": "Developed responsive web applications using JavaScript, React, and Django for multiple clients."
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "YOUR_UNIVERSITY",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "graduationYear": 2020
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "3D Portfolio Website",
+      "url": "https://islahuddin-3d-portfolio.netlify.app/",
+      "github": "https://github.com/islahuddinn/3d-portfolio-website",
+      "description": "Interactive 3D portfolio built with React.js, Three.js, and TailwindCSS. Deployed on Netlify.",
+      "tech": ["React.js", "Three.js", "TailwindCSS", "Netlify"]
+    },
+    {
+      "name": "IMDB Clone (Dockerized)",
+      "url": "",
+      "github": "https://github.com/islahuddinn/imdb",
+      "description": "Full-stack IMDB clone built with Django (backend) and React (frontend), fully containerized with Docker.",
+      "tech": ["Django", "React", "Docker", "Python"]
+    },
+    {
+      "name": "Django CRM",
+      "url": "",
+      "github": "https://github.com/islahuddinn/Django-crm",
+      "description": "Customer Relationship Management system built with Django and Python.",
+      "tech": ["Django", "Python", "PostgreSQL"]
+    },
+    {
+      "name": "Mamvo App",
+      "url": "",
+      "github": "https://github.com/islahuddinn/Mamvo-App",
+      "description": "Backend API for Mamvo App built with Node.js and Express.js.",
+      "tech": ["Node.js", "Express.js", "MongoDB"]
+    },
+    {
+      "name": "Easy Consulting (MERN)",
+      "url": "",
+      "github": "https://github.com/islahuddinn/Easy-Consulting-react",
+      "description": "Full-stack MERN software agency website with eCommerce, blog, and business features.",
+      "tech": ["React", "Node.js", "Express.js", "MongoDB"]
+    }
+  ],
+
+  "certifications": [],
+
+  "links": {
+    "resumePDF": "https://drive.google.com/file/d/1Css9stGx-E0UyAjWdgE8Ixs0Lqz-Ce9b/view?usp=drive_link",
+    "coverLetterTemplate": "I am Islahuddin, a Full Stack Developer with 4 years of experience building scalable web applications using the MERN stack, Django, and Docker. I am excited to apply for this {job_title} position at {company}. I am immediately available for remote work and passionate about delivering high-quality solutions. My portfolio: https://islahuddin-3d-portfolio.netlify.app/"
+  },
+
+  "preferences": {
+    "preferredRoles": [
+      "Full Stack Developer",
+      "MERN Stack Developer",
+      "Backend Developer",
+      "Node.js Developer",
+      "React Developer",
+      "Frontend Developer",
+      "Django Developer",
+      "Software Engineer"
+    ],
+    "excludeKeywords": ["on-site only", "US citizens only", "EU only", "no remote"],
+    "minSalaryUSD": 2000,
+    "autoApplyConfidence": "medium",
+    "easyApplyOnly": true
+  }
+}

@@ -1,0 +1,33 @@
+# Secrets — never commit these
+.env
+setup/.env
+*.env
+setup/config/openclaw.json
+data/credentials.json
+
+# OpenClaw session files (contain auth cookies)
+linkedin_session.json
+gmail_token.json
+
+# Auto-generated logs
+data/applications_log.json
+data/linkedin_posts_log.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Debug screenshots
+data/debug_*.png

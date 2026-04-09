@@ -1,0 +1,33 @@
+{
+  "_comment": "Phase 1: Daily LinkedIn job digest via WhatsApp only",
+  "_docs": "https://docs.openclaw.ai/automation/cron-jobs",
+
+  "cron": [
+    {
+      "id": "daily-linkedin-digest",
+      "name": "Daily LinkedIn Easy Apply Digest",
+      "schedule": "0 9 * * *",
+      "timezone": "Asia/Karachi",
+      "enabled": true,
+      "action": {
+        "type": "agent-message",
+        "channel": "whatsapp",
+        "to": "+923036039298",
+        "message": "Run the daily LinkedIn Easy Apply job digest for Islahuddin. Search LinkedIn for: 'full stack developer remote', 'node.js developer remote', 'MERN stack developer remote', 'react developer remote'. Filter: Easy Apply only, posted within last 24 hours, remote. Show top 5-8 jobs with: job title, company name, salary (if shown), and apply link. Number each job [1], [2], etc. End the message with: 'Reply apply [number] to apply to a specific job, or apply all to apply to all of them.'"
+      }
+    },
+    {
+      "id": "weekly-linkedin-activity-check",
+      "name": "Weekly Application Summary",
+      "schedule": "0 18 * * SUN",
+      "timezone": "Asia/Karachi",
+      "enabled": true,
+      "action": {
+        "type": "agent-message",
+        "channel": "whatsapp",
+        "to": "+923036039298",
+        "message": "Give Islahuddin a weekly LinkedIn job application summary. Read data/applications_log.json and report: total applications this week, which companies were applied to, and how many succeeded vs failed. If fewer than 10 applications were made this week, suggest running a new job search."
+      }
+    }
+  ]
+}
