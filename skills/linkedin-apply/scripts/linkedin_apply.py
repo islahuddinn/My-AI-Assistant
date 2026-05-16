@@ -75,6 +75,24 @@ def add_to_log(log: list, job: dict, status: str, error: str | None = None):
     })
 
 
+def validate_input(query: str, location: str, limit: int) -> None:
+    """Validate user inputs to prevent injection or abuse."""
+    if not query or len(query.strip()) == 0:
+        raise ValueError("Query cannot be empty")
+    if len(query) > 100:
+        raise ValueError("Query too long (max 100 chars)")
+    if not location or len(location.strip()) == 0:
+        raise ValueError("Location cannot be empty")
+    if len(location) > 50:
+        raise ValueError("Location too long (max 50 chars)")
+    if limit < 1 or limit > 20:
+        raise ValueError("Limit must be between 1 and 20")
+    # Basic sanitization
+    import re
+    if re.search(r'[<>]', query) or re.search(r'[<>]', location):
+        raise ValueError("Invalid characters in input")
+
+
 # ─── Job Search ──────────────────────────────────────────────────────────────
 def search_jobs(page, query: str, location: str = "Remote", limit: int = 10) -> list:
     """Search LinkedIn jobs and return a list of job objects."""
@@ -212,6 +230,9 @@ def apply_easy_apply(page, job: dict, resume: dict) -> dict:
 
 # ─── Main Search/Apply Flow ───────────────────────────────────────────────────
 def run(query: str, location: str, limit: int, do_apply: bool, job_url: str | None):
+    # Validate inputs
+    validate_input(query, location, limit)
+
     if not SESSION_FILE.exists():
         print("ERROR: No LinkedIn session. Run linkedin_post.py --login first.")
         sys.exit(1)
@@ -234,6 +255,7 @@ def run(query: str, location: str, limit: int, do_apply: bool, job_url: str | No
         results["jobs"] = jobs_to_process
 
         if do_apply:
+            applied_count = 0
             for job in jobs_to_process:
                 if is_already_applied(job["url"], log):
                     print(f"  ⏭️  Already applied: {job['title']} @ {job['company']}")
@@ -245,18 +267,26 @@ def run(query: str, location: str, limit: int, do_apply: bool, job_url: str | No
                     results["skipped"].append(job)
                     continue
 
+                # Rate limiting: max 5 applications per session
+                if applied_count >= 5:
+                    print("  ⏭️  Rate limit reached (5 applications max per session)")
+                    results["skipped"].extend(jobs_to_process[len(results["applied"]) + len(results["skipped"]) + len(results["failed"]):])
+                    break
+
                 print(f"  Applying: {job['title']} @ {job['company']}...")
                 apply_result = apply_easy_apply(page, job, resume)
 
                 if apply_result.get("success"):
                     add_to_log(log, job, "applied")
                     results["applied"].append(job)
+                    applied_count += 1
                 else:
                     add_to_log(log, job, "failed", apply_result.get("reason"))
                     results["failed"].append(job)
                     print(f"  ❌ Failed: {apply_result.get('reason')}")
 
-                human_delay(3000, 6000)  # Polite delay between applications
+                # Longer delay between applications to avoid detection
+                human_delay(5000, 10000)  # 5-10 seconds
 
             save_log(log)
 
@@ -279,6 +309,11 @@ def main():
 
     if not args.search and not args.url:
         parser.print_help()
+        sys.exit(1)
+
+    # Validate limit
+    if args.limit < 1 or args.limit > 20:
+        print("ERROR: Limit must be between 1 and 20")
         sys.exit(1)
 
     run(

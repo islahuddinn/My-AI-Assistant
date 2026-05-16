@@ -72,6 +72,8 @@ def login_and_save_session():
     """Open a visible browser for the user to log in, then save the session."""
     print("Opening browser for LinkedIn login...")
     print("Please log in manually. The session will be saved automatically.")
+    print("⚠️  SECURITY WARNING: The session file contains your LinkedIn cookies.")
+    print("   Keep this file secure and never share it!")
     print("Press ENTER here after you have fully logged in.")
 
     with sync_playwright() as p:
@@ -86,6 +88,7 @@ def login_and_save_session():
         SESSION_FILE.parent.mkdir(parents=True, exist_ok=True)
         context.storage_state(path=str(SESSION_FILE))
         print(f"✅ Session saved to {SESSION_FILE}")
+        print("🔒 Keep this file secure — it contains authentication cookies!")
         browser.close()
 
 
@@ -95,6 +98,14 @@ def post_to_linkedin(content: str, image_path: str | None = None):
     if not SESSION_FILE.exists():
         print("ERROR: No LinkedIn session found. Run with --login first.")
         sys.exit(1)
+
+    # Basic input validation
+    if not content or len(content.strip()) == 0:
+        print("ERROR: Content cannot be empty")
+        return {"success": False, "error": "Empty content"}
+    if len(content) > 3000:
+        print("ERROR: Content too long (max 3000 characters)")
+        return {"success": False, "error": "Content too long"}
 
     print(f"Posting to LinkedIn... ({len(content)} characters)")
 
