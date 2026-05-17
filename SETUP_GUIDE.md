@@ -10,6 +10,33 @@ This is an AI-powered personal assistant that automates job hunting, LinkedIn ma
 
 ---
 
+## CI / CD (Optional)
+
+You can add a simple CI that checks Python syntax and installs dependencies. A minimal GitHub Actions workflow has been added at `.github/workflows/ci.yml` which:
+
+- Installs Python 3.11
+- Installs the packages from `requirements.txt`
+- Installs Playwright browsers
+- Runs `python -m py_compile` across the repository to catch syntax errors
+
+To enable automatic deployment (CD) you'll need to add packaging and deployment steps tailored to your target environment (Docker image push, remote VM deploy, cloud function, etc.). If you want, I can scaffold a Docker-based deployment workflow next.
+
+## Training / Model
+
+- No local model training is required. The assistant uses hosted models via the DeepSeek API (`DEEPSEEK_API_KEY`) and optional OpenAI for voice transcription. There is no separate training step to run locally.
+
+## WhatsApp env variable added
+
+I added your WhatsApp number to the env template `setup/.env.example` as `WHATSAPP_NUMBER=+923036039298`. Copy the example to your OpenClaw env location and edit if needed:
+
+```powershell
+Copy-Item setup\.env.example "$env:USERPROFILE\.openclaw\.env"
+notepad "$env:USERPROFILE\.openclaw\.env"
+```
+
+OpenClaw reads `setup/config/openclaw.json` for the `channels.whatsapp.allowFrom` list (it already includes your number). The `WHATSAPP_NUMBER` env variable is provided so you can centralize settings; ensure the number in `openclaw.json` matches the env variable if you change it.
+
+
 ## Step-by-Step Setup Guide
 
 ### Step 1: Get API Keys
