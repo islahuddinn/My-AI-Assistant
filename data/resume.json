@@ -1,27 +1,27 @@
-{
-  "_comment": "Your real profile — used for auto-filling job applications. Update the blanks!",
+﻿{
+  "_comment": "Your real profile — used for auto-filling job applications.",
 
   "personal": {
     "firstName": "Islahuddin",
     "lastName": "",
-    "email": "YOUR_EMAIL@gmail.com",
+    "email": "m.islahuddin87@gmail.com",
     "phone": "+923036039298",
     "location": {
       "city": "Lahore",
       "country": "Pakistan",
       "timezone": "Asia/Karachi"
     },
-    "linkedin": "https://www.linkedin.com/in/islahuddinn",
+    "linkedin": "https://www.linkedin.com/in/islahuddinn/",
     "github": "https://github.com/islahuddinn",
-    "portfolio": "https://islahuddin-3d-portfolio.netlify.app/",
-    "twitter": "https://twitter.com/Slahuddinoffic1",
-    "website": "https://islahuddin-3d-portfolio.netlify.app/"
+    "portfolio": "https://omnichannel-ai-flow.vercel.app",
+    "twitter": "",
+    "website": "https://omnichannel-ai-flow.vercel.app"
   },
 
   "professional": {
     "title": "Full Stack Developer",
     "yearsExperience": 4,
-    "summary": "Enthusiastic and motivated Full Stack Developer with nearly 4 years of experience building scalable web applications. Proficient in the MERN stack (MongoDB, Express.js, React, Node.js), Django, Docker, and modern JavaScript. Passionate about clean code, automation, and delivering impactful digital solutions. Eager to contribute to team success through hard work and attention to detail.",
+    "summary": "Full Stack Developer with nearly 4 years of experience building scalable, production-grade SaaS platforms and high-traffic systems using Node.js, Express, React, Next.js, MongoDB, and MySQL. Backend-focused engineer with hands-on ownership of multi-tenant architectures, secure REST APIs, real-time systems, background job processing, and cloud deployments on GCP and AWS.",
     "availability": "Immediate",
     "workType": ["Remote", "Contract", "Full-time"],
     "salaryExpectation": {
@@ -34,97 +34,110 @@
 
   "skills": {
     "languages": ["JavaScript", "TypeScript", "Python", "SQL"],
-    "frontend": ["React.js", "Next.js", "Three.js", "HTML5", "CSS3", "TailwindCSS"],
-    "backend": ["Node.js", "Express.js", "Django", "REST APIs"],
-    "databases": ["MongoDB", "PostgreSQL", "MySQL"],
-    "devops": ["Docker", "Git", "GitHub", "Netlify", "Linux"],
-    "other": ["MERN Stack", "3D Web Development", "Agile/Scrum"]
+    "frontend": ["React.js", "Next.js", "Vue.js", "HTML5", "CSS3"],
+    "backend": ["Node.js", "Express.js", "Django", "REST APIs", "WebSockets"],
+    "databases": ["MongoDB", "MySQL", "Supabase", "Firebase"],
+    "devops": ["Docker", "CI/CD", "Linux", "GCP", "AWS", "Nginx"],
+    "other": ["MERN Stack", "SaaS Architecture", "Clean Architecture", "API Design", "Automation"]
   },
 
   "experience": [
     {
-      "company": "YOUR_CURRENT_COMPANY",
-      "title": "Full Stack Developer",
-      "startDate": "2022-01",
+      "company": "Mexil.it",
+      "title": "Full Stack Developer (Remote)",
+      "startDate": "2025-10",
       "endDate": "Present",
-      "description": "Building and maintaining full-stack web applications using React, Node.js, Express, and MongoDB. Developing REST APIs and delivering client-facing digital products."
+      "description": "Developing and maintaining backend systems for a high-scale mobile application serving millions of users on AWS. Building and optimizing APIs using Node.js, Next.js, and MongoDB. Contributing to scalable backend architecture, performance optimization, and data modeling for large user bases. Implemented authentication, authorization, and secure data access patterns. Designed and developed OmniAiFlow, a B2B SaaS omnichannel communication platform enabling unified customer interactions across WhatsApp, Email, and SMS with AI-powered automation workflows."
     },
     {
-      "company": "YOUR_PREVIOUS_COMPANY",
-      "title": "Junior Developer",
-      "startDate": "2020-06",
-      "endDate": "2021-12",
-      "description": "Developed responsive web applications using JavaScript, React, and Django for multiple clients."
+      "company": "Humai-AI",
+      "title": "Backend / Full Stack Developer (Remote)",
+      "startDate": "2025-03",
+      "endDate": "2025-09",
+      "description": "Lead backend engineer and system owner for Huscribe, a SaaS platform used by thousands of users to automate Salesforce, HubSpot, Dynamics 365, Asana, Zoho, and other CRMs using AI agents. Architected a scalable Node.js & Express backend with MongoDB on Google Cloud Platform. Built secure REST APIs, webhook processors, and background job pipelines using cron-based workers. Implemented JWT-based authentication, role-based access control, and tenant isolation. Designed data processing pipelines to ingest, normalize, and synchronize data across third-party platforms. Improved reliability and performance through async job processing, query optimization, and structured logging."
+    },
+    {
+      "company": "Bridge Zone",
+      "title": "Backend Developer",
+      "startDate": "2023-10",
+      "endDate": "2025-03",
+      "description": "Built and maintained scalable server-side applications using Node.js and Express. Designed and managed MongoDB databases, ensuring data integrity, performance, and security. Deployed applications on AWS (EC2, S3) and handled production configurations. Implemented authentication, authorization, and RESTful APIs for multiple products. Worked closely with frontend, QA, and product teams to ship reliable, production-grade features."
+    },
+    {
+      "company": "Allied Consultants",
+      "title": "Full Stack Developer (Internship)",
+      "startDate": "2023-03",
+      "endDate": "2023-10",
+      "description": "Worked on full stack development using the MERN stack and Python/Django. Developed frontend features using JavaScript and React and backend APIs using Node.js. Contributed to database design, API development, and UI integration."
     }
   ],
 
   "education": [
     {
-      "institution": "YOUR_UNIVERSITY",
-      "degree": "Bachelor of Science",
-      "field": "Computer Science",
-      "graduationYear": 2020
+      "institution": "University of the Punjab",
+      "degree": "Bachelor of Science in Education (B.S. Ed)",
+      "field": "Education",
+      "graduationYear": 2015
+    },
+    {
+      "institution": "Allama Iqbal College",
+      "degree": "F.Sc. Pre-Engineering",
+      "field": "Pre-Engineering",
+      "graduationYear": 2011
     }
   ],
 
   "projects": [
     {
-      "name": "3D Portfolio Website",
-      "url": "https://islahuddin-3d-portfolio.netlify.app/",
-      "github": "https://github.com/islahuddinn/3d-portfolio-website",
-      "description": "Interactive 3D portfolio built with React.js, Three.js, and TailwindCSS. Deployed on Netlify.",
-      "tech": ["React.js", "Three.js", "TailwindCSS", "Netlify"]
+      "name": "OmniAiFlow",
+      "url": "https://omnichannel-ai-flow.vercel.app",
+      "github": "",
+      "description": "B2B SaaS omnichannel communication platform to manage customer interactions across WhatsApp, Email, and SMS from a single interface.",
+      "tech": ["Node.js", "Express.js", "React", "AWS", "AI"]
     },
     {
-      "name": "IMDB Clone (Dockerized)",
-      "url": "",
-      "github": "https://github.com/islahuddinn/imdb",
-      "description": "Full-stack IMDB clone built with Django (backend) and React (frontend), fully containerized with Docker.",
-      "tech": ["Django", "React", "Docker", "Python"]
+      "name": "Huscribe",
+      "url": "https://www.huscribe.com",
+      "github": "",
+      "description": "SaaS CRM automation platform that automates Salesforce, HubSpot, Dynamics 365, Asana, Zoho, and other CRMs using AI agents.",
+      "tech": ["Node.js", "Express.js", "MongoDB", "GCP", "AI"]
     },
     {
-      "name": "Django CRM",
+      "name": "WordSnap",
       "url": "",
-      "github": "https://github.com/islahuddinn/Django-crm",
-      "description": "Customer Relationship Management system built with Django and Python.",
-      "tech": ["Django", "Python", "PostgreSQL"]
+      "github": "https://github.com/islahuddinn/worldsnap",
+      "description": "Gaming backend application developed with scalable Node.js API architecture and deployed on AWS.",
+      "tech": ["Node.js", "AWS", "API Design"]
     },
     {
-      "name": "Mamvo App",
-      "url": "",
-      "github": "https://github.com/islahuddinn/Mamvo-App",
-      "description": "Backend API for Mamvo App built with Node.js and Express.js.",
-      "tech": ["Node.js", "Express.js", "MongoDB"]
-    },
-    {
-      "name": "Easy Consulting (MERN)",
-      "url": "",
-      "github": "https://github.com/islahuddinn/Easy-Consulting-react",
-      "description": "Full-stack MERN software agency website with eCommerce, blog, and business features.",
-      "tech": ["React", "Node.js", "Express.js", "MongoDB"]
+      "name": "Global Price Localizer API",
+      "url": "https://rapidapi.com/mislahuddin87/api/global-price-localizer-api",
+      "github": "",
+      "description": "Public API to calculate global prices including taxes and duties, designed for fast and reliable price calculations.",
+      "tech": ["Node.js", "Express.js", "API"]
     }
   ],
 
   "certifications": [],
 
   "links": {
-    "resumePDF": "https://drive.google.com/file/d/1Css9stGx-E0UyAjWdgE8Ixs0Lqz-Ce9b/view?usp=drive_link",
-    "coverLetterTemplate": "I am Islahuddin, a Full Stack Developer with 4 years of experience building scalable web applications using the MERN stack, Django, and Docker. I am excited to apply for this {job_title} position at {company}. I am immediately available for remote work and passionate about delivering high-quality solutions. My portfolio: https://islahuddin-3d-portfolio.netlify.app/"
+    "resumePDF": "",
+    "coverLetterTemplate": "I am Islahuddin, a Full Stack Developer with nearly 4 years of experience building scalable SaaS platforms and APIs with Node.js, React, Next.js, MongoDB, and AWS. I am excited to apply for this {job_title} position at {company}. I am immediately available for remote work across Europe, USA, Australia, and the Gulf."
   },
+
+  "languages": ["Urdu (Native)", "English (Fluent)"],
 
   "preferences": {
     "preferredRoles": [
       "Full Stack Developer",
-      "MERN Stack Developer",
-      "Backend Developer",
       "Node.js Developer",
       "React Developer",
-      "Frontend Developer",
-      "Django Developer",
-      "Software Engineer"
+      "Backend Developer",
+      "API Engineer",
+      "SaaS Engineer"
     ],
     "excludeKeywords": ["on-site only", "US citizens only", "EU only", "no remote"],
-    "minSalaryUSD": 2000,
+    "minSalaryUSD": 2500,
     "autoApplyConfidence": "medium",
     "easyApplyOnly": true
   }
