@@ -1,6 +1,6 @@
 # WhatsApp Manager — Quick Start Guide
 
-Welcome! This folder contains everything you need to automate WhatsApp message replies with OpenClaw and DeepSeek.
+Welcome! This folder contains everything you need to automate WhatsApp message replies with OpenClaw and OpenRouter.
 
 ---
 
@@ -18,20 +18,19 @@ Welcome! This folder contains everything you need to automate WhatsApp message r
 
 ## 🚀 Quick Start (3 steps)
 
-### 1. Add your DeepSeek API key
+### 1. Add your OpenRouter API key
 ```powershell
 notepad "$env:USERPROFILE\.openclaw\.env"
 ```
 Set:
 ```
-DEEPSEEK_API_KEY=sk-<your-actual-key>
+OPENROUTER_API_KEY=or-<your-key>
 WHATSAPP_NUMBER=+923036039298
 ```
 
-### 2. Start OpenClaw
+### 2. Start OpenClaw from this project
 ```powershell
-openclaw onboard --install-daemon
-openclaw dashboard
+.\start.ps1
 ```
 
 ### 3. Scan WhatsApp QR and send a test message
@@ -151,9 +150,9 @@ See **QUICK_ACTIONS.md** for templates and examples:
 - Run `openclaw config validate`
 - Check that skills are synced: `Copy-Item -Path "skills\*" -Destination "$env:USERPROFILE\.openclaw\skills" -Recurse -Force`
 
-**DeepSeek API errors?**
-- Verify your key in `~/.openclaw/.env` starts with `sk-`
-- Check your account has credits: https://platform.deepseek.com/account/overview
+**OpenRouter API errors?**
+- Verify your key in `~/.openclaw/.env` starts with `or-`
+- Check your OpenRouter account and API settings at https://openrouter.ai
 
 **WhatsApp not connecting?**
 - Open dashboard at `http://127.0.0.1:18789`

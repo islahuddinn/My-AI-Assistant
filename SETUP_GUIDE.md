@@ -1,7 +1,7 @@
 # AI Personal Assistant — Complete Setup & Usage Guide
 
 ## Overview
-This is an AI-powered personal assistant that automates job hunting, LinkedIn management, email handling, and WhatsApp communication. It uses OpenClaw framework with DeepSeek AI.
+This is an AI-powered personal assistant that automates job hunting, LinkedIn management, email handling, and WhatsApp communication. It uses the OpenClaw framework with a free OpenRouter model.
 
 ## ⚠️ Important Warnings
 - **LinkedIn TOS**: Automated job applications may violate LinkedIn's terms. Use at your own risk.
@@ -23,7 +23,7 @@ To enable automatic deployment (CD) you'll need to add packaging and deployment 
 
 ## Training / Model
 
-- No local model training is required. The assistant uses hosted models via the DeepSeek API (`DEEPSEEK_API_KEY`) and optional OpenAI for voice transcription. There is no separate training step to run locally.
+- No local model training is required. The assistant uses hosted models via OpenRouter (`OPENROUTER_API_KEY`) and optional OpenAI for voice transcription. There is no separate training step to run locally.
 
 ## WhatsApp env variable added
 
@@ -40,10 +40,10 @@ OpenClaw reads `setup/config/openclaw.json` for the `channels.whatsapp.allowFrom
 ## Step-by-Step Setup Guide
 
 ### Step 1: Get API Keys
-**Required: DeepSeek API Key** (nearly free AI brain)
-1. Go to https://platform.deepseek.com/api_keys
+**Required: OpenRouter API Key** (free-tier AI brain)
+1. Go to https://openrouter.ai
 2. Sign up and create an API key
-3. Copy the key (starts with `sk-`)
+3. Copy the key (starts with `or-`)
 
 **Optional: OpenAI API Key** (for voice note transcription)
 1. Go to https://platform.openai.com/api-keys
@@ -69,7 +69,7 @@ Copy-Item setup\.env.example "$env:USERPROFILE\.openclaw\.env"
 
 2. Edit the `.env` file and add your real keys:
 ```
-DEEPSEEK_API_KEY=sk-your-actual-deepseek-key-here
+OPENROUTER_API_KEY=or-your-openrouter-key-here
 OPENAI_API_KEY=sk-your-openai-key-here  # optional
 ```
 
@@ -81,8 +81,16 @@ Edit `data\resume.json` with your real information:
 - Job preferences
 
 ### Step 5: Onboard with OpenClaw
+This repository is configured to use the local gateway only, so you do not need to install a daemon or auto-start the service.
+
+If you previously installed a gateway service, run:
 ```powershell
-openclaw onboard --non-interactive --mode local --auth-choice deepseek-api-key --deepseek-api-key "YOUR_DEEPSEEK_KEY" --skip-health --accept-risk
+openclaw gateway uninstall
+```
+
+Then start the assistant with:
+```powershell
+.\start.ps1
 ```
 
 ### Step 6: Deploy Skills and Config
@@ -222,7 +230,7 @@ To add new automated tasks:
 ---
 
 ## Cost Estimation
-- **DeepSeek**: ~$0.001 per conversation (nearly free)
+- **OpenRouter**: free tier available for owl-alpha and other supported models
 - **OpenAI**: ~$0.006/minute voice transcription (pennies/month)
 - **Everything else**: Free (open source)
 

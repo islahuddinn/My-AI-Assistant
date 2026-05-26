@@ -1,6 +1,6 @@
 ---
 name: whatsapp_manager
-description: Handles WhatsApp inbound messages and replies using the DeepSeek model.
+description: Handles WhatsApp inbound messages and replies using the OpenRouter free-model workflow.
 metadata:
   openclaw:
     requires:
@@ -10,28 +10,27 @@ metadata:
 
 # WhatsApp Manager Skill
 
-This skill is focused on WhatsApp automation using OpenClaw and the DeepSeek model.
+This skill is focused on WhatsApp automation using OpenClaw and a free OpenRouter model.
 
 ## Purpose
 - Receive WhatsApp messages from your phone number only
 - Understand, summarize, and draft professional replies
-- Keep the first stage text-only, using DeepSeek as the brain
+- Keep the first stage text-only, using OpenRouter as the brain
 - Add voice support later with OpenAI if desired
 
 ## Setup
-1. Add your DeepSeek API key to `C:\Users\USER\.openclaw\.env`:
+1. Add your OpenRouter API key to `C:\Users\USER\.openclaw\.env`:
    ```powershell
-   DEEPSEEK_API_KEY=sk-<your-key>
+   OPENROUTER_API_KEY=or-<your-key>
    WHATSAPP_NUMBER=+923036039298
    ```
 2. Confirm OpenClaw has a valid config:
    ```powershell
    openclaw config validate
    ```
-3. Start the daemon and dashboard:
+3. Start the assistant from this project:
    ```powershell
-   openclaw onboard --install-daemon
-   openclaw dashboard
+   .\start.ps1
    ```
 4. Scan the WhatsApp QR code from the dashboard in your WhatsApp app.
 

@@ -1,7 +1,7 @@
 ﻿# ============================================================
 # Quick Launch Script — Start the AI Assistant
 # ============================================================
-# Run this whenever you want to start/restart the assistant:
+# Run this whenever you want to start the assistant from this project:
 #   .\start.ps1
 # ============================================================
 
@@ -35,21 +35,29 @@ if (-not (Test-Path $ConfigDest)) {
     Write-Host "  Config already exists — leaving it in place." -ForegroundColor DarkYellow
 }
 
-# Restart gateway
-Write-Host "Restarting OpenClaw gateway..." -ForegroundColor Yellow
-try {
-    openclaw gateway restart
-    Write-Host "  Gateway running" -ForegroundColor Green
-} catch {
-    Write-Host "  Gateway restart failed; starting gateway directly..." -ForegroundColor DarkYellow
-    openclaw gateway run --port 18789 --bind loopback
+# Copy the project .env to OpenClaw home if present
+$RepoEnv = "$PSScriptRoot\.env"
+$HomeEnv = "$env:USERPROFILE\.openclaw\.env"
+if (Test-Path $RepoEnv) {
+    Copy-Item -Path $RepoEnv -Destination $HomeEnv -Force
+    Write-Host "  Copied project .env to OpenClaw home" -ForegroundColor Green
+
+    $envContents = Get-Content $HomeEnv -ErrorAction SilentlyContinue
+    $openRouterKey = $envContents | Where-Object { $_ -match '^OPENROUTER_API_KEY=' }
+    if ($openRouterKey -and ($openRouterKey -replace '^OPENROUTER_API_KEY=', '').Trim() -eq '') {
+        Write-Host "WARNING: OPENROUTER_API_KEY is empty in $HomeEnv." -ForegroundColor Yellow
+        Write-Host "Add your OpenRouter API key before starting the assistant." -ForegroundColor Yellow
+    }
+} else {
+    Write-Host "WARNING: No project .env found at $RepoEnv. OpenClaw may not have your API key." -ForegroundColor Yellow
 }
 
-# Open dashboard
-Write-Host ""
-Write-Host "Assistant is running (or starting)." -ForegroundColor Green
-Write-Host "Gateway dashboard: http://127.0.0.1:18789" -ForegroundColor Cyan
-Write-Host "If WhatsApp login is pending, open the dashboard and complete pairing." -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Opening dashboard in browser..." -ForegroundColor Yellow
+# Launch the OpenClaw gateway in a new PowerShell window
+Write-Host "Starting OpenClaw gateway in a new terminal..." -ForegroundColor Yellow
+$gatewayCommand = "Set-Location -LiteralPath '$PSScriptRoot'; openclaw gateway run --port 18789 --bind loopback"
+Start-Process powershell -ArgumentList @('-NoExit', '-Command', $gatewayCommand)
+
+Write-Host "  Gateway launch requested." -ForegroundColor Green
+Write-Host "  Dashboard will open shortly if the gateway starts successfully." -ForegroundColor Green
+Start-Sleep -Seconds 4
 Start-Process "http://127.0.0.1:18789"
