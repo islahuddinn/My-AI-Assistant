@@ -112,9 +112,10 @@ Write-Host '   Setup Complete!' -ForegroundColor Green
 Write-Host '=====================================================' -ForegroundColor Green
 Write-Host ''
 Write-Host 'Next steps:' -ForegroundColor Cyan
-Write-Host '  1. Edit setup\config\openclaw.json - add your API keys & phone number'
-Write-Host '  2. Edit data\resume.json - add your profile for job applications'
-Write-Host '  3. Run: openclaw onboard --install-daemon'
-Write-Host '  4. Run: openclaw dashboard   (then scan WhatsApp QR)'
-Write-Host '  5. Send a message to your Telegram bot to test!'
+Write-Host '  1. Edit setup\config\openclaw.json - add your API keys & phone number' -ForegroundColor Cyan
+Write-Host '  2. Edit data\resume.json - add your profile for job applications' -ForegroundColor Cyan
+Write-Host '  3. Run: .\start.ps1' -ForegroundColor Cyan
+Write-Host '  4. Open the dashboard: http://127.0.0.1:18789' -ForegroundColor Cyan
+Write-Host '  5. Run: openclaw channels login --channel whatsapp' -ForegroundColor Cyan
+Write-Host '  6. Use openclaw gateway stop to stop the assistant when needed' -ForegroundColor Cyan
 Write-Host ''
